@@ -181,6 +181,6 @@ function getColor(type) {
 // Add parish and municipal boundaries geoJSON
 L.geoJSON("/test-leaflet-gsheets/data-sources/ascension-parish-and-municipalities.geojson", {
     style: function (feature) {
-        return {color: feature.properties.color};
+        return {color: Feature.properties.stroke};
     }
 }).addTo(map);

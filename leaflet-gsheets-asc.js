@@ -149,16 +149,8 @@ function addPoints(data) {
 
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
-        // marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
+        marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
 
-		            click: function(e) {
-
-                    L.DomEvent.stopPropagation(e); 
-
-                	$('#sidebar-title').text(e.target.feature.properties.location);
-					$('#sidebar-content').text(e.target.feature.properties.category);
-					sidebar.open(panelID);
-                }
       		});
 		
       	// AwesomeMarkers is used to create fancier icons

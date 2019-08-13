@@ -1,8 +1,6 @@
 [
     {
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
+      "geometry": "[ [
           [
             [
               -91.106926,
@@ -930,8 +928,7 @@
             ]
           ]
         ]
-      },
-      "properties": {
+      ]",
         "stroke": "#ff8040",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -941,11 +938,10 @@
         "boundary": "administrative",
         "name": "Ascension Parish",
         "nist:fips_code": 22005
-      }
     },
     {
-      "geometry": {
-        "coordinates": [
+      "geometry": "[{
+        [
           [
             [
               -91.015662,
@@ -1657,8 +1653,7 @@
             ]
           ]
         ]
-      },
-      "properties": {
+      ]",
         "stroke": "#0000ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -1669,11 +1664,10 @@
         "boundary": "administrative",
         "name": "Donaldsonville",
         "place": "town"
-      }
     },
     {
-      "geometry": {
-        "coordinates": [
+      "geometry": "[
+        [
           [
             [
               -90.9552927,
@@ -3089,8 +3083,7 @@
             ]
           ]
         ]
-      },
-      "properties": {
+      ]",
         "stroke": "#0000ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -3101,11 +3094,10 @@
         "boundary": "administrative",
         "name": "Gonzales",
         "place": "town"
-      }
     },
     {
-      "geometry": {
-        "coordinates": [
+      "geometry": "[
+        [
           [
             [
               -90.8901359,
@@ -3981,8 +3973,7 @@
             ]
           ]
         ]
-      },
-      "properties": {
+      ]",
         "stroke": "#0000ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -3993,6 +3984,5 @@
         "boundary": "administrative",
         "name": "Sorrento",
         "place": "town"
-      }
     }
   ]

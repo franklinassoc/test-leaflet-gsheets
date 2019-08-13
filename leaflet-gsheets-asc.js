@@ -5,11 +5,11 @@
 * The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
 */
 
-// The two getJSON calls load the localy stored JSONs and call the appropriate functions
+// This  getJSON call loads the localy stored polyline JSON and call the appropriate functions
 $.getJSON("https://franklinassoc.github.io/test-leaflet-gsheets/data-sources/US-states-leaflet.json", function(json) {
     addPolygons(json);
 });
-
+// the points JSON wasn't provided in the repository, so it must be pulled from author's website
 $.getJSON("https://rdrn.me/leaflet-gsheets/data-sources/US-points.json", function(json) {
     addPoints(json);
 });
@@ -108,8 +108,8 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
-	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3};
+  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5, "fillOpacity": 0};
+	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3, "fillOpacity": .25};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
@@ -149,8 +149,18 @@ function addPoints(data) {
 
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
-      	marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
+        // marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
 
+		            click: function(e) {
+
+                    L.DomEvent.stopPropagation(e); 
+
+                	$('#sidebar-title').text(e.target.feature.properties.location);
+					$('#sidebar-content').text(e.target.feature.properties.category);
+					sidebar.open(panelID);
+                }
+      		});
+		
       	// AwesomeMarkers is used to create fancier icons
       	var icon = L.AwesomeMarkers.icon({
 			icon: "info-sign",
@@ -164,8 +174,8 @@ function addPoints(data) {
   	}
 }
 
+// Point Marker Colors function
 // Returns different colors depending on the string passed
-// Used for the points layer
 function getColor(type) {
 	switch (type) {
 		case "Coffee Shop":

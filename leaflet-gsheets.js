@@ -6,11 +6,11 @@
 */
 
 // The two getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("https://rdrn.me/leaflet-gsheets/data-sources/US-states-leaflet.json", function(json) {
+$.getJSON("/test-leaflet-gsheets/data-sources/US-states-leaflet.json", function(json) {
     addPolygons(json);
 });
 
-$.getJSON("https://rdrn.me/leaflet-gsheets/data-sources/US-points.json", function(json) {
+$.getJSON("/test-leaflet-gsheets/data-sources/US-points.json", function(json) {
     addPoints(json);
 });
 
@@ -31,8 +31,8 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-// Create a new Leaflet map centered on the continental US
-var map = L.map("map").setView([40, -100], 4);
+// Create a new Leaflet map centered on Louisiana
+var map = L.map("map").setView([30.2, -90.0], 4);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {

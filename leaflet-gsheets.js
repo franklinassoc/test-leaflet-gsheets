@@ -6,11 +6,11 @@
 */
 
 // The two getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("/test-leaflet-gsheets/data-sources/US-states-leaflet.json", function(json) {
+$.getJSON("./data-sources/US-states-leaflet.json", function(json) {
     addPolygons(json);
 });
 
-$.getJSON("/test-leaflet-gsheets/data-sources/US-points.json", function(json) {
+$.getJSON("./data-sources/US-points.json", function(json) {
     addPoints(json);
 });
 
@@ -20,13 +20,13 @@ function init() {
 
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
-	var statesURL = "https://docs.google.com/spreadsheets/d/1p9pdXDgaLLVFj1agny5m1Y5gHSeRYJP-K0hrENLkfJo/edit?usp=sharing";
-	var lawsURL = "https://docs.google.com/spreadsheets/d/1WyZNokrgj5NmbyYrRIOQDa2mZ0_SEdbjBohR2RmKXp8/edit?usp=sharing";
+	var linesURL = "https://docs.google.com/spreadsheets/d/1p9pdXDgaLLVFj1agny5m1Y5gHSeRYJP-K0hrENLkfJo/edit?usp=sharing";
+	var pointsURL = "https://docs.google.com/spreadsheets/d/1WyZNokrgj5NmbyYrRIOQDa2mZ0_SEdbjBohR2RmKXp8/edit?usp=sharing";
 
-    Tabletop.init( { key: lawsURL,
+    Tabletop.init( { key: pointsURL,
                      callback: addPoints,
                      simpleSheet: true } );  // simpleSheet assumes there is only one table and automatically sends its data
-    Tabletop.init( { key: statesURL,
+    Tabletop.init( { key: linesURL,
                      callback: addPolygons,
                      simpleSheet: true } );
 }
@@ -54,14 +54,14 @@ var panelContent = {
     id: panelID,                     // UID, used to access the panel
     tab: '<i class="fa fa-bars active"></i>',  // content can be passed as HTML string,
     pane: '<p id="sidebar-content"></p>',        // DOM elements can be passed, too
-    title: '<h2 id="sidebar-title"> No state selected</h2>',              // an optional pane header
+    title: '<h2 id="sidebar-title"> No item selected</h2>',              // an optional pane header
     position: 'top'                  // optional vertical alignment, defaults to 'top'
 };
 sidebar.addPanel(panelContent);
 
 map.on('click', function (feature, layer) {
 	sidebar.close(panelID);
-	//$('#sidebar-title').text("No state selected");
+	//$('#sidebar-title').text("No item selected");
 	//$('#sidebar-content').text("");
 });
 
@@ -183,13 +183,12 @@ function pboundsStyle(feature) {
   return {
     fillColor: "#FF00FF",
     fillOpacity: 0,
-    color: 'ff8040',
+    color: "ff8040",
   };
 }
 
 // Add parish and municipal boundaries geoJSON
-var parishlayer = new L.geoJSON("/test-leaflet-gsheets/data-sources/ascension-parish-and-municipalities.geojson",{
+var parishlayer = new L.geoJSON("/data-sources/ascension-parish-and-municipalities.geojson",{
   style: pboundsStyle
   });
-  
   parishlayer.addTo(map);

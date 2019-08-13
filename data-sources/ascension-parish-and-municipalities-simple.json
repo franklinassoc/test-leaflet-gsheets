@@ -1,6 +1,15 @@
 [
     {
-      "geometry": "[ [
+        "stroke": "#ff8040",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#ffffff",
+        "fill-opacity": 0,
+        "border_type": "county",
+        "boundary": "administrative",
+        "name": "Ascension Parish",
+        "geometry": "[ 
+		[
           [
             [
               -91.106926,
@@ -928,19 +937,20 @@
             ]
           ]
         ]
-      ]",
-        "stroke": "#ff8040",
-        "stroke-width": 2,
-        "stroke-opacity": 1,
-        "fill": "#ffffff",
-        "fill-opacity": 0,
-        "border_type": "county",
-        "boundary": "administrative",
-        "name": "Ascension Parish",
-        "nist:fips_code": 22005
+      ]"
     },
     {
-      "geometry": "[{
+	    "stroke": "#0000ff",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#eeeeee",
+        "fill-opacity": 0,
+        "admin_level": 8,
+        "border_type": "city",
+        "boundary": "administrative",
+        "name": "Donaldsonville",
+        "place": "town",
+        "geometry": "[
         [
           [
             [
@@ -1653,20 +1663,20 @@
             ]
           ]
         ]
-      ]",
+      ]"
+    },
+    {
         "stroke": "#0000ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#eeeeee",
+        "fill": "#d6d4d4",
         "fill-opacity": 0,
         "admin_level": 8,
         "border_type": "city",
         "boundary": "administrative",
-        "name": "Donaldsonville",
-        "place": "town"
-    },
-    {
-      "geometry": "[
+        "name": "Gonzales",
+        "place": "town",
+        "geometry": "[
         [
           [
             [
@@ -3083,20 +3093,20 @@
             ]
           ]
         ]
-      ]",
+      ]"
+    },
+    {
         "stroke": "#0000ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
         "fill": "#d6d4d4",
         "fill-opacity": 0,
         "admin_level": 8,
-        "border_type": "city",
+        "border_type": "town",
         "boundary": "administrative",
-        "name": "Gonzales",
-        "place": "town"
-    },
-    {
-      "geometry": "[
+        "name": "Sorrento",
+        "place": "town",
+        "geometry": "[
         [
           [
             [
@@ -3973,16 +3983,6 @@
             ]
           ]
         ]
-      ]",
-        "stroke": "#0000ff",
-        "stroke-width": 2,
-        "stroke-opacity": 1,
-        "fill": "#d6d4d4",
-        "fill-opacity": 0,
-        "admin_level": 8,
-        "border_type": "town",
-        "boundary": "administrative",
-        "name": "Sorrento",
-        "place": "town"
+      ]"
     }
   ]

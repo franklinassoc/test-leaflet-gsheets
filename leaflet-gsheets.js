@@ -14,6 +14,10 @@ $.getJSON("/test-leaflet-gsheets/data-sources/US-points.json", function(json) {
     addPoints(json);
 });
 
+$.getJSON("/test-leaflet-gsheets/data-sources/ascension-parish-and-municipalities-simple.json", function(json) {
+    addPolygons(json);
+});
+
 // init() is called as soon as the page loads
 function init() {
 

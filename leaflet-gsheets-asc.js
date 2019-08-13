@@ -178,8 +178,8 @@ function getColor(type) {
 	}
 }
 
-// Set style for parish boundary layer
-  	var pboundsStyle = {"color": "#ff8040", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
+// Set style for parish boundary and municipalities layer
+  	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
 
 // Add parish and municipal boundaries geoJSON
   $.getJSON("./data-sources/ascension-parish-and-municipalities.geojson",function(pbounds){

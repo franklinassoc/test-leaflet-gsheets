@@ -108,8 +108,8 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5, "fillOpacity": 0};
-	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3, "fillOpacity": .25};
+  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
+	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
@@ -150,7 +150,6 @@ function addPoints(data) {
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
         marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
-
       		});
 		
       	// AwesomeMarkers is used to create fancier icons

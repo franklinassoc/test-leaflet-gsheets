@@ -188,7 +188,7 @@ function pboundsStyle(feature) {
 }
 
 // Add parish and municipal boundaries geoJSON
-var parishlayer = new L.geoJSON("/data-sources/ascension-parish-and-municipalities.geojson",{
+var parishlayer = new L.geoJSON("./data-sources/ascension-parish-and-municipalities.geojson",{
   style: pboundsStyle
   });
   parishlayer.addTo(map);

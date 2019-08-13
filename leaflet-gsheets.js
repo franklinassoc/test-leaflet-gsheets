@@ -6,11 +6,11 @@
 */
 
 // The two getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("./data-sources/US-states-leaflet.json", function(json) {
+$.getJSON("https://franklinassoc.github.io/test-leaflet-gsheets/data-sources/US-states-leaflet.json", function(json) {
     addPolygons(json);
 });
 
-$.getJSON("./data-sources/US-points.json", function(json) {
+$.getJSON("https://franklinassoc.github.io/test-leaflet-gsheets/data-sources/US-points.json", function(json) {
     addPoints(json);
 });
 
@@ -179,16 +179,16 @@ function getColor(type) {
 }
 
 // define the style for the municipal boundaries layer
-function pboundsStyle(feature) {
-  return {
-    fillColor: "#FF00FF",
-    fillOpacity: 0,
-    color: "ff8040",
-  };
-}
+//function pboundsStyle(feature) {
+//  return {
+//    fillColor: "#FF00FF",
+//    fillOpacity: 0,
+//    color: "ff8040",
+//  };
+//}
 
 // Add parish and municipal boundaries geoJSON
-var parishlayer = new L.geoJSON("./data-sources/ascension-parish-and-municipalities.geojson",{
-  style: pboundsStyle
+  $.getJSON("./data-sources/ascension-parish-and-municipalities.geojson",function(pbounds){
+ // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(pbounds).addTo(map);
   });
-  parishlayer.addTo(map);

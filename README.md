@@ -12,4 +12,4 @@ Chris explained the process in more length in his blog post here: [Leaflet maps 
 
 ## Folium and gspread
 
-Chris did another version (code in the [folium-gspread](https://github.com/carderne/leaflet-gsheets/tree/master/folium-gspread) folder) recreating this using only Python and the [Folium](https://github.com/python-visualization/folium) library. This requires a server instance running to update the map, however. The output map is identical to the one created above. I explained this version in my other blog post: [A workflow for Python mapping with automatic updating](https://rdrn.me/python-mapping-automatic-updating/) 
+Chris did another version (code in the [folium-gspread](https://github.com/carderne/leaflet-gsheets/tree/master/folium-gspread) folder) recreating this using only Python and the [Folium](https://github.com/python-visualization/folium) library. This requires a server instance running to update the map, however. The output map is identical to the one created above. Chris explained this version in a blog post: [A workflow for Python mapping with automatic updating](https://rdrn.me/python-mapping-automatic-updating/) 
